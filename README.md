@@ -1,2 +1,2 @@
-# mushroomlin.github.io
-My personal homepage
+# My Personal Homepage
+## Powered by jekyll-uno Theme

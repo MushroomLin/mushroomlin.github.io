@@ -1,0 +1,43 @@
+# Site settings
+title: Mushroom
+description: "Mushroom Bishop's Homepage"
+url: 'http://mushroomlin.com/'
+baseurl: ''
+google_analytics: 'UA-140781198-1'
+# disqus_shortname: 'your-disqus-name'
+
+author:
+  name: 'Mushroom Lin'
+  email: oneera.mushroom@gmail.com
+  twitter_username: mushroomlin520
+  facebook_username: mushroomlt
+  github_username:  mushroomlin
+  linkedin_username:  mushroomlin
+
+defaults:
+  -
+    scope:
+      path: ''
+      type: 'posts'
+    values:
+        layout: 'post'
+
+# Build settings
+destination: _site
+paginate: 10
+permalink: /:year/:title/
+markdown: kramdown
+highlighter: rouge
+
+sass:
+    sass_dir: _sass
+    style: compressed
+
+kramdown:
+  # use Github Flavored Markdown
+  input: GFM
+  # do not replace newlines by <br>s
+  hard_wrap: false
+
+plugins: ['jekyll-paginate']
+exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'screenshot.png']
