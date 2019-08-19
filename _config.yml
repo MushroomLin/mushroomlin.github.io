@@ -6,6 +6,10 @@ baseurl: ''
 google_analytics: 'UA-140781198-1'
 # disqus_shortname: 'your-disqus-name'
 
+# Image settings
+cover: cover_min.jpg
+profile: profile.jpg
+
 author:
   name: 'Mushroom Lin'
   email: oneera.mushroom@gmail.com
