@@ -6,43 +6,46 @@ tags: [leetcode, algorithm, weekly contest]
 
 ---
 
-1. [Find Words That Can Be Formed by Characters][Problem1]
-  For this problem, we can simply use a hashmap to count the number of each character appears in `chars`. For each word in `words`, we check if the number of each character appears in word in less than or equal to the number in original `chars`. Let n be the number of word in `words` and m be the length of each word. The time complexity is `O(mn)` and space complexity is `O(26) = O(1)`
-
-  ```python
-      def countCharacters(self, words, chars):
-          """
-          :type words: List[str]
-          :type chars: str
-          :rtype: int
-          """
-          # Use chars_map to count the number of each char appears in chars
-          chars_map = {}
-          for c in chars:
-              if c not in chars_map:
-                  chars_map[c] = 0
-              chars_map[c] += 1
-          ans = 0
-          # For each word in words, we compare the number of each character 
-          for word in words:
-              word_map = {}
-              for c in word:
-                  if c not in word_map:
-                      word_map[c] = 0
-                  word_map[c] += 1
-                  flag = 0
-                  # early stop
-                  if c not in chars_map or word_map[c] > chars_map[c]:
-                      flag = 1
-                      break
-              if not flag:
-                  ans += len(word)
-          return ans
-  ```
+1. [Find Words That Can Be Formed by Characters][Problem1] 
+    
+    For this problem, we can simply use a hashmap to count the number of each character appears in chars. For each word in words, we check if the number of each character appears in word in less than or equal to the number in original chars. Let n be the number of word in words and m be the length of each word. The time complexity is `O(mn)` and space complexity is `O(26) = O(1)`.
+    
+    ```python
+          def countCharacters(self, words, chars):
+              """
+              :type words: List[str]
+              :type chars: str
+              :rtype: int
+              """
+              # Use chars_map to count the number of each char appears in chars
+              chars_map = {}
+              for c in chars:
+                  if c not in chars_map:
+                      chars_map[c] = 0
+                  chars_map[c] += 1
+              ans = 0
+              # For each word in words, we compare the number of each character 
+              for word in words:
+                  word_map = {}
+                  for c in word:
+                      if c not in word_map:
+                          word_map[c] = 0
+                      word_map[c] += 1
+                      flag = 0
+                      # early stop
+                      if c not in chars_map or word_map[c] > chars_map[c]:
+                          flag = 1
+                          break
+                  if not flag:
+                      ans += len(word)
+              return ans
+    ```
+    
+    
 
 2. [Maximum Level Sum of a Binary Tree][Problem2]
 
-   We can use recursion to traverse the binary tree by level and use an hashmap to remember sum of each level. We only need to traverse each tree node once, so the time complexity is `O(n)`. The space complexity is `O(level)= O(lgn)` .
+   We can use recursion to traverse the binary tree by level and use an hashmap to remember sum of each level. We only need to traverse each tree node once, so the time complexity is `O(n)`. The space complexity is `O(level)`= `O(lgn)` .
 
    ```python
        def maxLevelSum(self, root):
@@ -109,7 +112,7 @@ tags: [leetcode, algorithm, weekly contest]
 
 4. [Last Substring in Lexicographical Order][Problem4]
 
-   According to the problem description, it is easy to get that the answer should be an suffix of original string `s`. Because if not we can always add all chars after the substring to it to get a larger substring. Then we can brute force all suffix and compare to get a largest substring.
+   According to the problem description, it is easy to get that the answer should be an suffix of original string s. Because if not we can always add all chars after the substring to it to get a larger substring. Then we can brute force all suffix and compare to get a largest substring.
 
    ```python
        def lastSubstring(self, s):
@@ -127,15 +130,15 @@ tags: [leetcode, algorithm, weekly contest]
 
    Consider above code, in each round we compare current suffix of `s` with the current maximum substring. However, in fact we do not need to compare the two whole string. Instead, we only need to compare the part that current suffix string minus current maximum substring. We choose the smaller length of the part and current maximum, and compare char by char. If this part is larger than or equal to current maximum substring, then this suffix must be the new maximum.
 
-   For example, we have string `s` to be `bbab`:
+   For example, we have string s to be `bbab`:
 
    Round 1 we have first suffix to be `b`, and the maximum should also be `b`.
 
-   Round 2 we compare second suffix `ab` with current maximum `b`, we only need to compare `a` with `b`. Since `a<b`, we have maximums still be `b`.
+   Round 2 we compare second suffix `ab` with current maximum `b`, we only need to compare `a` with `b`. Since `a`<`b`, we have maximums still be `b`.
 
-   Round 3 we compare third suffix `bab` with current maximum `b`, we only need to compare `ba` with `b`. Since the min length of the two is 1, we only compare first char. Since `b = b`, we have current maximum to be `bab`.
+   Round 3 we compare third suffix `bab` with current maximum `b`, we only need to compare `ba` with `b`. Since the min length of the two is 1, we only compare first char. Since `b `= `b`, we have current maximum to be `bab`.
 
-   Round 4 we compare last suffix `bbab` with current maximum `bab`, we only need to compare `b` with `bab`. Since the min length of the two is 1, we only compare first char. Since `b=b`, we have current maximum to be `bbab`.
+   Round 4 we compare last suffix `bbab` with current maximum `bab`, we only need to compare `b` with `bab`. Since the min length of the two is 1, we only compare first char. Since `b`=`b`, we have current maximum to be `bbab`.
 
    ```python
        def lastSubstring(self, s):
