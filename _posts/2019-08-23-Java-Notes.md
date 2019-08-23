@@ -6,9 +6,9 @@ tags: [Java, notes]
 
 ---
 
-# Java Notes
 
-1. 反射 Reflection
+
+1. ### 反射 Reflection
 
    * 获取Class实例的三种方式：
 
@@ -79,7 +79,7 @@ tags: [Java, notes]
 
    
 
-2. 注解 Annotation
+2. ### 注解 Annotation
 
    * 注解是放在Java源码的类、方法、字段、参数前的一种标签，本身不影响程序逻辑
 
@@ -129,16 +129,16 @@ tags: [Java, notes]
 
    
 
-3. 泛型 Generics
+3. ### 泛型 Generics
 
    * 什么是泛型：泛型就是一种模板，例如ArrayList\<T\>, 在代码中为用到的类创建对应类型，编译器可以针对类型做检查，泛型在继承的时候T不能变（T没有继承关系）
-   
+
    * 使用泛型可以省略可以自动推断出的类型：ArrayList\<String\> li = new ArrayList<>();
-   
+
      不指定泛型参数类型时，编译器会给出警告，且只能将\<T\>视为Object类型
-   
+
    * 编写泛型：
-   
+
      ~~~java
      public class Pair<T> {
          private T first;
@@ -155,56 +155,56 @@ tags: [Java, notes]
          }
      }
      ~~~
-   
+
      * 泛型类型\<T\>不能用于静态方法
-   
+
      * 泛型也可以同时定义多种类型<T, K>
-   
+
        public class Pair<T, K>{ ... }
-   
+
    * 擦拭法 Type Erasure
-   
+
      * 编译器编译时会把类型\<T\>视为Object，根据\<T\>实现安全的强制转型
-   
+
      * 擦除导致泛型的局限：
-   
+
        \<T\>不能是基本类型
-   
+
        无法取得带泛型的Class，例如：Pair\<String\>.class
-   
+
        无法判断带泛型的Class，例如： x instanceof Pair\<String\>
-   
+
        不能直接实例化T类型，例如 new T()，实例化T类型必须借助Class\<T\>
-   
+
        可能导致方法重名：比如Object的equals方法
-   
+
      * 子类可以获取父类的泛型类型\<T\>
-   
+
    * 泛型extends通配符
-   
+
      * 使用类似<? extends Number>通配符作为方法参数时表示：
-   
+
        方法内部可以获取调用Number引用的方法：Number n = obj.getXxx()
-   
+
        方法内部无法调用传入Number引用的方法（null除外）：obj.set(Number n)
-   
+
      * 使用类似\<T extends Number\> 定义泛型类时表示：泛型类型限定为Number或Number子类
-   
+
    * 泛型super通配符
-   
+
      - 使用类似<? super Number>通配符作为方法参数时表示：
-   
+
        方法内部无法获取调用Integer引用的方法：Integer n = obj.getXxx()
-   
+
        方法内部可以调用传入Integer引用的方法（null除外）：obj.set(Integer n)
-   
+
      - 使用类似\<T extends Integer\> 定义泛型类时表示：泛型类型限定为Integer或Integer父类
-   
+
    * 泛型数组
+
    
-   
-   
-4. Java集合 Collections
+
+4. ### Java集合 Collections
 
    * Java集合类定义在java.util包中，包括List, Set, Map等
 
@@ -291,7 +291,7 @@ tags: [Java, notes]
 
          
 
-5. Java I/O
+5. ### Java I/O
 
     * 字节流byte: InputStream/OutputStream
 
@@ -390,7 +390,7 @@ tags: [Java, notes]
             }
         }
         ```
-    
+
     * 序列化 Serialize
       
         * 序列化是指把一个Java对象变成二进制内容(byte[]), 可以保存在文件中或通过网络传输
@@ -415,13 +415,13 @@ tags: [Java, notes]
         ```
 
     * 反序列化由JVM直接构造对象，不调用构造方法
-    
+
     * 可以声明一个serialVersionUID作为版本号，版本号变化时无法反序列化
-    
+
     * 如果需要与其它语言进行通用序列化，一般使用JSON/XML替代
-    
+
     * Reader/Writer 字符流
-    
+
         * Reader用法
 
           ```java
