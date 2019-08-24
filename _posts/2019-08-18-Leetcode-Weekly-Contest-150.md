@@ -7,7 +7,7 @@ tags: [leetcode, algorithm, weekly contest]
 ---
 
 1. [Find Words That Can Be Formed by Characters][Problem1] 
-    
+   
     For this problem, we can simply use a hashmap to count the number of each character appears in chars. For each word in words, we check if the number of each character appears in word in less than or equal to the number in original chars. Let n be the number of word in words and m be the length of each word. The time complexity is `O(mn)` and space complexity is `O(26) = O(1)`.
     
     ```python
@@ -41,7 +41,7 @@ tags: [leetcode, algorithm, weekly contest]
               return ans
     ```
     
-    
+     
 
 2. [Maximum Level Sum of a Binary Tree][Problem2]
 
@@ -72,6 +72,8 @@ tags: [leetcode, algorithm, weekly contest]
                    ans = min(ans, k)
            return ans
    ```
+
+    
 
 3. [As Far From Land as Possible][Problem3]
 
@@ -109,6 +111,8 @@ tags: [leetcode, algorithm, weekly contest]
                level += 1
            return level-1 if level-1 >0 else -1 
    ```
+
+    
 
 4. [Last Substring in Lexicographical Order][Problem4]
 
