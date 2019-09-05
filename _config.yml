@@ -1,10 +1,14 @@
 # Site settings
 title: Mushroom's Homepage
-description: "Like Singing, Jumping, Rua, Basketball."
+description: "If I played my very best, nothing else would be matter."
 url: 'http://mushroomlin.com/'
 baseurl: ''
 google_analytics: 'UA-140781198-1'
 # disqus_shortname: 'your-disqus-name'
+
+# Image settings
+cover: cover_min.jpg
+profile: profile.jpg
 
 author:
   name: 'Mushroom Lin'
@@ -41,3 +45,5 @@ kramdown:
 
 plugins: ['jekyll-paginate']
 exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'screenshot.png']
+
+theme: jekyll-theme-minimal
