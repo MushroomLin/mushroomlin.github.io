@@ -1,5 +1,5 @@
 ---
-title:  "Leetcode Biweekly Contest 7"
+title:  "Leetcode Biweekly Contest 8"
 date:   2019-09-07 15:00:00
 categories: [leetcode, algorithm]
 tags: [leetcode, algorithm, weekly contest]
