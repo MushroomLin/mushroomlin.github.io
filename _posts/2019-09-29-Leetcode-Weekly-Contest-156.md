@@ -1,6 +1,6 @@
 ---
-title:  "Leetcode BiWeekly Contest 9"
-date:   2019-09-22 00:00:00
+title:  "Leetcode Weekly Contest 156"
+date:   2019-09-29 00:00:00
 categories: [leetcode, algorithm]
 tags: [leetcode, algorithm, weekly contest]
 
